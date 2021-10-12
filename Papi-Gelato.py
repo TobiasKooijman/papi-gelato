@@ -2,7 +2,7 @@
 import time
 restart = 0
 while restart == 0:
-    print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
+    print("Welkom bij Papi Gelato!")
     time.sleep(1)
     bOh = 0
     aardbei = 0
