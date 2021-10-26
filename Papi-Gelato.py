@@ -1,6 +1,7 @@
 ## start Text
 import time
 restart = 0
+toppie = 0
 bOh = 0
 aardbei = 0
 choco = 0
@@ -8,6 +9,10 @@ munt = 0
 bkje = 0
 hrrn = 0
 Vanil = 0
+sprink = 0
+slag = 0
+geen = 0
+caramel = 0
 while restart == 0:
     print("Welkom bij Papi Gelato!")
     time.sleep(1)
@@ -48,8 +53,16 @@ while restart == 0:
                 res = 1
             else:
                 print("Dit is geen geldig antwoord")
-                i -= 1
-
+                i = i - 1
+        topping = input('Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus? ')
+        if topping.lower() == "a":
+            geen += 1
+        elif topping.lower() == "b":
+            slag += 1
+        elif topping.lower() == "c":
+            sprink += 1
+        elif topping.lower() == "d":
+            caramel += 1
     if aardbei >= 1:
         ab = 'Uw krijgt '+str(aardbei)+ ' bolletjes met aardbij smaak'
         print(ab)
@@ -75,12 +88,29 @@ while restart == 0:
         bkje_tot = int(bkje)* 0.75
         hrrn_tot = int(hrrn)*1.25
         if bkje >= 1:
-            rek_bkj = 'bakje          '+str(bkje)+' X 0.75 = '+ str(bkje_tot)
+            rek_bkj = 'Bakje          '+str(bkje)+' X 0.75 = '+ str(bkje_tot)
             print(rek_bkj)
         if hrrn >= 1:
             rek_hrrn = 'Hoorn          '+str(hrrn)+' X 1.25 = '+ str(hrrn_tot)
             print(rek_hrrn)
-        print("              ---------- +")
-        totaal = int(bkje_tot) + int(hrrn_tot) + int(bol_tot)
-        print("Totaal:          "+ str(totaal)+" euro")
+        if geen > 0:
+            topping_bon = 'Topping                 = '+ str(0)
+            toppie = 0
+        if slag > 0:
+            topping_bon = 'Topping                 = '+ str(0.50)
+            toppie = 0.50
+        if sprink > 0:
+            topping_bon = 'Topping                 = '+ str(0.30)
+            toppie = 0.30
+        if caramel > 0:
+            if bkje >= 1:
+                topping_bon = 'Topping                  = '+ str(0.90)
+                toppie = 0.90
+            if hrrn >= 1:
+                topping_bon = 'Topping                  = '+ str(0.60)
+                toppie = 0.60
+        print(topping_bon)
+        print("                   ---------- +")
+        totaal = float(bkje_tot) + float(hrrn_tot) + float(bol_tot) + float(toppie)
+        print("Totaal:                   "+ str(totaal)+" euro")
         exit()
