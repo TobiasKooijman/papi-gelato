@@ -44,21 +44,18 @@ while begn == 0:
                 else:
                     print("Sorry, dat begrijp ik niet!")
                 for i in range(1,int(bolletjes)+1):
-                    Smaak = input('welke smaak wilt u bij bolletje '+str(i)+'? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ')
+                    Smaak = input('welke smaak wilt u bij bolletje '+str(i)+'? A) Aardbei, C) Chocolade of V) Vanille? ')
                     if Smaak.lower() == "a":
                         aardbei += 1
                         res = 1
                     elif Smaak.lower() == "c":
                         choco += 1
                         res = 1
-                    elif Smaak.lower() == "m":
-                        munt += 1
-                        res = 1
                     elif Smaak.lower() == "v":
                         Vanil += 1
                         res = 1
                     else:
-                        print("Dit is geen geldig antwoord")
+                        print("Sorry dat is geen optie die we aanbieden...")
                         i = i - 1
                 topping = input('Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus? ')
                 if topping.lower() == "a":
@@ -75,9 +72,6 @@ while begn == 0:
             if choco >= 1:
                 ch = 'Uw krijgt '+str(choco)+ ' bolletjes met chocolade smaak'
                 print(ch)
-            if munt >= 1:
-                mu = 'Uw krijgt '+str(munt)+ ' bolletjes met munt smaak'
-                print(mu)
             if Vanil >= 1:
                 van = 'Uw krijgt '+str(Vanil)+ ' bolletjes met vanille smaak'
                 print(van)
@@ -88,8 +82,8 @@ while begn == 0:
                 time.sleep(1)
                 print("-------------[Papi-Gelato]--------------")
                 print("")
-                bol_tot = int(bolletjes) * 1.10
-                rek_bol = 'Bolletjes      ' + str(bolletjes) + ' X 1.10 = ' + str(bol_tot)
+                bol_tot = int(bolletjes) * 0.95
+                rek_bol = 'Bolletjes      ' + str(bolletjes) + ' X 0.95 = ' + str(bol_tot)
                 print(rek_bol)
                 bkje_tot = int(bkje)* 0.75
                 hrrn_tot = int(hrrn)*1.25
@@ -123,7 +117,7 @@ while begn == 0:
     if zijn.lower() == "b":
         liters = input('Hoeveel liter wilt u? ')
         for i in range(1,int(liters)+1):
-            Smaak = input('welke smaak wilt u bij het '+str(i)+'e liter? A) Aardbei, C) Chocolade, M) Munt of V) Vanille? ')
+            Smaak = input('welke smaak wilt u bij het '+str(i)+'e liter? A) Aardbei, C) Chocolade of V) Vanille? ')
             if Smaak.lower() == "a":
                 aardbei += 1
                 res = 1
@@ -137,7 +131,7 @@ while begn == 0:
                 Vanil += 1
                 res = 1
             else:
-                print("Dit is geen geldig antwoord")
+                print("Sorry dat is geen optie die we aanbieden...")
                 i = i - 1
         print("")
         print("-------------[Papi-Gelato]--------------")
@@ -147,8 +141,8 @@ while begn == 0:
         print(Liter_bon)
         print("                    -------- +" )
         print("Totaal               = "+ str(liters_tot))
-        bon_btw = int(liters_tot) / 100 * 9
-        print("BTW (9%)             = "+str(bon_btw))
+        bon_btw = int(liters_tot) / 100 * 6
+        print("BTW (6%)             = "+str(bon_btw))
         exit()
     else:
-        print("Sorry, dit snap ik niet")
+        print("Sorry dat is geen optie die we aanbieden...")
